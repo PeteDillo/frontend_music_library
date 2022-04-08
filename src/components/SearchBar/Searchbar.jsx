@@ -9,9 +9,24 @@ const SearchBar = (props) => {
     getSongs();
 
       let results = songs.filter((song) => {
-        if (song.includes(searchTerm)) {
-          return song;
-        }
+        if (song.title.toLowerCase().includes(searchTerm.toLowerCase())){
+          return song
+      }
+      if (song.artist.toLowerCase().includes(searchTerm.toLowerCase())){
+          return song
+      }
+      if (song.album.toLowerCase().includes(searchTerm.toLowerCase())){
+          return song
+      }
+      if (song.genre.toLowerCase().includes(searchTerm.toLowerCase())){
+          return song
+      }
+      if (song.releaseDate.toLowerCase().includes(searchTerm.toLowerCase())){
+          return song
+      }
+      else{
+          return false
+      }
       });
       setSongs(results);
     //set returned songs into table
