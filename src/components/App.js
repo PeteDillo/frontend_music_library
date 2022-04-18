@@ -9,7 +9,7 @@ function App() {
   const getSongs = async () => {
     try {
       let response = await axios.get(
-        "http://www.devcodecampmusiclibrary.com/api/music"
+        "http://localhost:5005/api/songs"
       );
       console.log(response.data);
 
@@ -18,6 +18,7 @@ function App() {
       console.log(error);
     }
   };
+  
   return (
     <div className="App">
       
